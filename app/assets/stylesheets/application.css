@@ -18,6 +18,11 @@
     animation: appear 250ms;
 }
 
+#devise form, #devise h2, #devise a, 
+#devise input, #devise button, #devise .field {
+    animation: appear 500ms;
+}
+
 #btn1 {
     animation: appear2 500ms;
 }
