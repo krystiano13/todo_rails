@@ -2,12 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
+#devise {
+  @apply w-[100vw] h-[100vh] flex flex-col justify-center items-center;
+  @apply text-white;
 }
 
-*/
+#devise h2, #devise form h2 {
+  @apply text-4xl font-bold text-white mt-6 mb-6;
+}
+
+#devise form .actions input, 
+#devise button,
+#devise a {
+  @apply outline-none;
+  @apply mt-4;
+  @apply text-white bg-transparent border-2 border-solid border-white p-1 pl-6 pr-6;
+  @apply cursor-pointer hover:text-black hover:bg-white transition-colors;
+}
+
+#devise form {
+  @apply flex flex-col items-center justify-center gap-6; 
+}
+
+#devise .field input {
+  @apply mt-1 bg-transparent text-white border-2 border-solid border-white;
+  @apply outline-none;
+}
