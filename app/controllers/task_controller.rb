@@ -1,6 +1,8 @@
 class TaskController < ApplicationController
   before_action :check_user
-  def index; end
+  def index
+    @tasks = Task.where(:user => current_user.email)
+  end
 
   private
   def check_user
