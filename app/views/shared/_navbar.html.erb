@@ -1,0 +1,8 @@
+<nav class="w-[100vw] p-4 fixed flex items-center gap-6">
+  <% if user_signed_in? %>
+    <%= link_to "Home", tasks_path, class: "text-white" %>
+    <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "text-white" %>
+  <% else %>
+    <%= link_to "Home", root_path, class: "text-white" %>
+  <% end %>
+</nav>
