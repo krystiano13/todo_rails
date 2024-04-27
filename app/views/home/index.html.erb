@@ -3,11 +3,7 @@
         TODO APP
     </h1> 
     <div class="flex flex-col items-center gap-6">
-        <button id="btn1" class="cursor-pointer hover:bg-white hover:text-black transition-colors text-lg font-medium text-white border-2 border-solid border-white p-1.5 pl-8 pr-8">
-            Log In
-        </button>
-        <button id="btn2" class="cursor-pointer hover:bg-white hover:text-black transition-colors text-lg font-medium text-white border-2 border-solid border-white p-1.5 pl-8 pr-8">
-            Create Account
-        </button>
+        <%= link_to "Log In", new_user_session_path, id: "btn1", class: "cursor-pointer hover:bg-white hover:text-black transition-colors text-lg font-medium text-white border-2 border-solid border-white p-1.5 pl-8 pr-8" %>
+        <%= link_to "Create Account", new_user_registration_path, id: "btn2", class: "cursor-pointer hover:bg-white hover:text-black transition-colors text-lg font-medium text-white border-2 border-solid border-white p-1.5 pl-8 pr-8" %>
     </div>
 </div>
