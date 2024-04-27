@@ -4,6 +4,12 @@ class TaskController < ApplicationController
     @tasks = Task.where(:user => current_user.email)
   end
 
+  def destroy
+    id = params[:id]
+    Task.destroy(id)
+    redirect_to tasks_path
+  end
+
   private
   def check_user
     unless user_signed_in?

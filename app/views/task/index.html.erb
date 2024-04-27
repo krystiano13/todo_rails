@@ -19,10 +19,7 @@
             class="hover:text-black text-white hover:bg-white transition-colors text-sm md:text-base p-0.5 md:p-1 pl-3 md:pl-5 pr-3 md:pr-5 border-2 border-solid border-white">
             Edit
           </button>
-          <button
-            class="hover:text-black text-white hover:bg-white transition-colors text-sm md:text-base p-0.5 md:p-1 pl-3 md:pl-5 pr-3 md:pr-5 border-2 border-solid border-white">
-            Delete
-          </button>
+          <%= button_to "Delete", tasks_destroy_path(task.id), method: :delete, class: "hover:text-black text-white hover:bg-white transition-colors text-sm md:text-base p-0.5 md:p-1 pl-3 md:pl-5 pr-3 md:pr-5 border-2 border-solid border-white" %>
         </div>
       </div>
     <% end %>
