@@ -5,7 +5,15 @@
   <div class="w-[90vw] md:w-[30rem] min-h-[30rem] md:min-h-[40rem] overflow-y-auto border-2 border-solid border-white">
     <% @tasks.each do |task| %>
       <div class="w-full flex items-center justify-between p-4">
-        <p class="text-white text-base md:text-lg w-4/5"><%= task.text %></p>
+        <p class="text-white text-base md:text-lg w-4/5 cursor-pointer">
+          <% if task.done %>
+            <s>
+              <%= task.text %>
+            </s>
+          <% else %>
+            <%= task.text %>
+          <% end %>
+        </p>
         <div class="flex items-center gap-4">
           <button
             class="hover:text-black text-white hover:bg-white transition-colors text-sm md:text-base p-0.5 md:p-1 pl-3 md:pl-5 pr-3 md:pr-5 border-2 border-solid border-white">
