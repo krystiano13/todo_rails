@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.alert {
+  @apply text-red-500 opacity-0 mt-12 pl-4 text-lg font-semibold;
+  animation: notice 1200ms;
+}
+
+.notice {
+  @apply text-emerald-500 opacity-0 mt-12 pl-4 text-lg font-semibold;
+  animation: notice 1200ms;
+}
+
 #devise {
   @apply w-[100vw] h-[100vh] flex flex-col justify-center items-center;
   @apply text-white;
@@ -27,4 +37,26 @@
 #devise .field input {
   @apply mt-1 bg-transparent text-white border-2 border-solid border-white;
   @apply outline-none;
+}
+
+@keyframes notice {
+  0% {
+    opacity : 0;
+    transform: translateX(-100px);
+  }
+
+  25% {
+    opacity : 1;
+    transform: translateX(0px);
+  }
+
+  75% {
+    opacity : 1;
+    transform: translateX(0px);
+  }
+
+  100% {
+    opacity : 0;
+    transform: translateX(-100px);
+  }
 }
