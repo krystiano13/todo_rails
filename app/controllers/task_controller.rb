@@ -2,6 +2,11 @@ class TaskController < ApplicationController
   before_action :check_user
   def index
     @tasks = Task.where(:user => current_user.email)
+    @task = Task.new
+  end
+
+  def create
+
   end
 
   def destroy
