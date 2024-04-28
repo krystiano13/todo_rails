@@ -19,7 +19,7 @@ function toggleForms() {
 cancelButton.addEventListener("click",() => {
     edit = false;
     toggleForms();
-})
+});
 
 tasks.forEach(item => {
     item.addEventListener("click", () => {
