@@ -39,15 +39,11 @@
   <div class="w-[90vw] md:w-[30rem] min-h-[25rem] md:min-h-[35rem] overflow-y-auto border-2 border-solid border-white">
     <% @tasks.each do |task| %>
       <div class="w-full flex items-center justify-between p-4">
-        <p class="text-white text-base md:text-lg w-4/5 cursor-pointer">
-          <% if task.done %>
-            <s>
-              <%= task.text %>
-            </s>
-          <% else %>
-            <%= task.text %>
-          <% end %>
-        </p>
+        <% if task.done %>
+          <%= button_to raw("<s>" + task.text + "</s>"), tasks_undone_path(task.id) , method: :patch ,class: "w-[100%] text-white text-base md:text-lg w-4/5 cursor-pointer" %>
+        <% else %>
+          <%= button_to raw(task.text), tasks_done_path(task.id) , method: :patch ,class: "w-[100%] text-white text-base md:text-lg w-4/5 cursor-pointer" %>
+        <% end %>
         <div class="flex items-center gap-4">
           <button
             id="<%= task.id %>"

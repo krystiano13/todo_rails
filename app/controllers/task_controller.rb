@@ -28,6 +28,22 @@ class TaskController < ApplicationController
     end
   end
 
+  def done
+    task = Task.where(:id => params[:id])
+    if task.present?
+      task.update(done: true)
+      redirect_to tasks_path
+    end
+  end
+
+  def undone
+    task = Task.where(:id => params[:id])
+    if task.present?
+      task.update(done: false)
+      redirect_to tasks_path
+    end
+  end
+
   def destroy
     id = params[:id]
     Task.destroy(id)
@@ -36,7 +52,7 @@ class TaskController < ApplicationController
 
   private
   def get_task_params
-    params.require(:task).permit(:text);
+    params.require(:task).permit(:text, :done);
   end
 
   private
