@@ -62,9 +62,6 @@ nav a::after, nav button::after {
     background: white;
     transform: scaleX(0);
 }
-
-
-
 @keyframes appear2 {
     0% {
         opacity: 0;
