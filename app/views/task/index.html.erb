@@ -29,14 +29,14 @@
       <% end %>
 
       <div class="flex items-center gap-2 max-w-[90vw] md:max-w-auto">
-        <%= form.text_field :text, placeholder: "Your task ...", class: "text-sm md:text-base bg-slate-900 text-white" %>
+        <%= form.text_field :text, placeholder: "Your task ..." , class: "editform text-sm md:text-base bg-slate-900 text-white w-[48%] md:w-auto" %>
         <%= form.button "Edit", class: "text-sm md:text-base p-1 pl-5 pr-5 text-white border-white border-2 border-solid hover:bg-white hover:text-black transition-colors" %>
         <button type="button" id="cancel" class="text-sm md:text-base p-1 pl-5 pr-5 text-white border-white border-2 border-solid hover:bg-white hover:text-black transition-colors">Cancel</button>
       </div>
     <% end %>
   </div>
 
-  <div class="w-[90vw] md:w-[30rem] min-h-[25rem] md:min-h-[35rem] overflow-y-auto border-2 border-solid border-white">
+  <div class="w-[90vw] md:w-[30rem] h-[25rem] md:h-[35rem] overflow-y-auto border-2 border-solid border-white">
     <% @tasks.each do |task| %>
       <div class="w-full flex items-center justify-between p-4">
         <% if task.done %>

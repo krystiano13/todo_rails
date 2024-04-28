@@ -18,7 +18,7 @@
 }
 
 #devise h2, #devise form h2 {
-  @apply text-4xl font-bold text-white mt-6 mb-6;
+  @apply text-4xl font-bold text-white mt-6 mb-6 text-center;
 }
 
 #devise form .actions input, 
