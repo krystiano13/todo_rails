@@ -24,6 +24,7 @@ cancelButton.addEventListener("click",() => {
 tasks.forEach(item => {
     item.addEventListener("click", () => {
         edit = true;
+        editForm.querySelector('form').action = `/tasks/edit/${item.id}`;
         toggleForms();
-    })
+    });
 });

@@ -21,7 +21,7 @@
   </div>
 
   <div id="edit" class="hidden">
-    <%= form_with model: @task, url: tasks_create_path do |form| %>
+    <%= form_with model: @task, method: :patch ,url: tasks_create_path do |form| %>
       <% if form.object.errors.any? %>
         <% form.object.errors.full_messages.each do |error| %>
           <p class="text-red-500"><%= error %></p>

@@ -17,6 +17,17 @@ class TaskController < ApplicationController
     end
   end
 
+  def update
+    task = Task.where(:id => params[:id])
+
+    if task.present?
+      task.update(get_task_params)
+      redirect_to tasks_path
+    else
+      render :index, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     id = params[:id]
     Task.destroy(id)
