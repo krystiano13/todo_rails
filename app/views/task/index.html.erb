@@ -3,19 +3,38 @@
     Your Tasks
   </h1>
 
-  <%= form_with model: @task, url: tasks_create_path do |form| %>
-    <% if form.object.errors.any? %>
-      <% form.object.errors.full_messages.each do |error| %>
-        <p class="text-red-500"><%= error %></p>
+  <script defer src="<%= javascript_path "form/form" %>"></script>
+
+  <div id="create" class="block">
+    <%= form_with model: @task, url: tasks_create_path do |form| %>
+      <% if form.object.errors.any? %>
+        <% form.object.errors.full_messages.each do |error| %>
+          <p class="text-red-500"><%= error %></p>
+        <% end %>
       <% end %>
-    <% end %>
 
-    <div class="flex items-center gap-2 max-w-[90vw] md:max-w-auto">
-      <%= form.text_field :text, placeholder: "Your task ...", class: "text-sm md:text-base bg-slate-900 text-white" %>
-      <%= form.button "Create", class: "text-sm md:text-base p-1 pl-5 pr-5 text-white border-white border-2 border-solid hover:bg-white hover:text-black transition-colors" %>
-    </div>
-
+      <div class="flex items-center gap-2 max-w-[90vw] md:max-w-auto">
+        <%= form.text_field :text, placeholder: "Your task ...", class: "text-sm md:text-base bg-slate-900 text-white" %>
+        <%= form.button "Create", class: "text-sm md:text-base p-1 pl-5 pr-5 text-white border-white border-2 border-solid hover:bg-white hover:text-black transition-colors" %>
+      </div>
   <% end %>
+  </div>
+
+  <div id="edit" class="hidden">
+    <%= form_with model: @task, url: tasks_create_path do |form| %>
+      <% if form.object.errors.any? %>
+        <% form.object.errors.full_messages.each do |error| %>
+          <p class="text-red-500"><%= error %></p>
+        <% end %>
+      <% end %>
+
+      <div class="flex items-center gap-2 max-w-[90vw] md:max-w-auto">
+        <%= form.text_field :text, placeholder: "Your task ...", class: "text-sm md:text-base bg-slate-900 text-white" %>
+        <%= form.button "Edit", class: "text-sm md:text-base p-1 pl-5 pr-5 text-white border-white border-2 border-solid hover:bg-white hover:text-black transition-colors" %>
+        <button type="button" id="cancel" class="text-sm md:text-base p-1 pl-5 pr-5 text-white border-white border-2 border-solid hover:bg-white hover:text-black transition-colors">Cancel</button>
+      </div>
+    <% end %>
+  </div>
 
   <div class="w-[90vw] md:w-[30rem] min-h-[25rem] md:min-h-[35rem] overflow-y-auto border-2 border-solid border-white">
     <% @tasks.each do |task| %>
@@ -31,7 +50,8 @@
         </p>
         <div class="flex items-center gap-4">
           <button
-            class="hover:text-black text-white hover:bg-white transition-colors text-sm md:text-base p-0.5 md:p-1 pl-3 md:pl-5 pr-3 md:pr-5 border-2 border-solid border-white">
+            id="<%= task.id %>"
+            class="task hover:text-black text-white hover:bg-white transition-colors text-sm md:text-base p-0.5 md:p-1 pl-3 md:pl-5 pr-3 md:pr-5 border-2 border-solid border-white">
             Edit
           </button>
           <%= button_to "Delete", tasks_destroy_path(task.id), method: :delete, class: "hover:text-black text-white hover:bg-white transition-colors text-sm md:text-base p-0.5 md:p-1 pl-3 md:pl-5 pr-3 md:pr-5 border-2 border-solid border-white" %>
