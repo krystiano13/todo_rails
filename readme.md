@@ -2,6 +2,7 @@
 
 ## Tech Stack:
 * Ruby on Rails
+* Ruby
 * SQLite
 * Javascript
 * HTML
